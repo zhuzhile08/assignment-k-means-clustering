@@ -23,7 +23,6 @@
 #include <fmt/core.h>
 #include <fmt/xchar.h>
 #include <fmt/chrono.h>
-#include <vulkan/vulkan.h>
 
 #include <utility>
 #include <mutex>
@@ -270,22 +269,10 @@ template <class Msg> inline constexpr void lstdAssert(bool condition, Msg messag
 		std::abort();
 	}
 }
-template <class Msg> inline constexpr void vulkanAssert(VkResult function, Msg message) {
-	if (function != VkResult::VK_SUCCESS) {
-		log::exception("Vulkan Exception: Failed to {} with error code: {}!", std::forward<Msg>(message), function);
-		std::abort();
-	}
-}
 
 template <class Format, typename ... Args> inline constexpr void lstdAssert(bool condition, Format&& format, Args&&... message) {
 	if (!condition) {
 		log::exception(std::forward<Format>(format), std::forward<Args>(message)...);
-		std::abort();
-	}
-}
-template <class Format, typename ... Args> inline constexpr void vulkanAssert(VkResult function, Format&& format, Args&&... message) {
-	if (function != VkResult::VK_SUCCESS) {
-		log::exception("Vulkan Exception: Failed to {} with error code: {}!", fmt::format(fmt::runtime(std::forward<Format>(format)), std::forward<Args>(message)...), function);
 		std::abort();
 	}
 }
