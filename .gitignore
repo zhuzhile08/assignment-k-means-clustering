@@ -34,7 +34,6 @@
 *.DS_Store
 
 # folders
-/include
 /XCode
 /.vscode/*
 /out
