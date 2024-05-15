@@ -399,7 +399,8 @@ private:
 
 		tok.m_name = parseString(begin, end);
 		++begin;
-		ASSERT(*begin++ == ':', "lstd::Json::parsePair(): JSON Syntax Error: unexcpected token!");
+		ASSERT(skipCharacters(begin, end) == ':', "lstd::Json::parsePair(): JSON Syntax Error: unexcpected token!");
+		++begin;
 
 		switch(skipCharacters(begin, end)) {
 			case '{':
