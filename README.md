@@ -1,2 +1,2 @@
 # assignment-k-means-clustering
-School assignment about the k-means clustering algorithm
+School assignment on the k-means clustering algorithm
