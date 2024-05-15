@@ -26,7 +26,7 @@ set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include/)
 
 # copy data files to the build location
 add_custom_target(copy_data
-	COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/data ${CMAKE_BINARY_DIR}data/
+	COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/data ${CMAKE_BINARY_DIR}/data/
 )
 
 # Include sub-projects.
@@ -40,7 +40,7 @@ PUBLIC
 	${INCLUDE_DIR}
 
 	# graphics and windowing libraries
-	${LIBRARY_PATH}/matplotpp/scoure/matplot/
+	${LIBRARY_PATH}/matplotpp/scoure/
 
 	# math and physics libraries
 	${LIBRARY_PATH}/glm/
@@ -50,6 +50,9 @@ PUBLIC
 )
 
 set (PROJECT_SOURCE_FILES 
+	"src/Common/FileSystem.cpp"
+	"src/Common/Logger.cpp"
+
 	"src/main.cpp"
 )
 
