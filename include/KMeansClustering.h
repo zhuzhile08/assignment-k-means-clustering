@@ -18,10 +18,10 @@
 
 class KMeansClustering {
 public:
-    KMeansClustering() : m_data(lstd::Json::parse(lstd::StringStream("data/data.json").data())) { }
+	KMeansClustering() : m_data(lstd::Json::parse(lstd::StringStream("data/data.json").data())) { }
 
-    void visualizeData();
+	void visualizeData();
 
 private:
-    lstd::Json m_data;
+	lstd::Json m_data;
 };
