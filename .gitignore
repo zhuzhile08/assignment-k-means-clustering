@@ -37,6 +37,7 @@
 /XCode
 /.vscode/*
 /out
+/build
 /.vs
 /lib
 
