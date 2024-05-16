@@ -4,6 +4,10 @@ project(KMeansClustering VERSION 0.5.0)
 set(CMAKE_CXX_STANDARD 23)
 
 
+# Include sub-projects.
+add_subdirectory ("3rdParty")
+
+
 # project options
 option(BUILD_STATIC "Build project statically" ON)
 if (BUILD_STATIC)
@@ -28,9 +32,6 @@ set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include/)
 add_custom_target(copy_data
 	COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/data ${CMAKE_BINARY_DIR}/data/
 )
-
-# Include sub-projects.
-add_subdirectory ("3rdParty")
 
 
 # includes and stuff
