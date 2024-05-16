@@ -1,9 +1,0 @@
-[submodule "3rdParty/matplotpp"]
-	path = 3rdParty/matplotpp
-	url = https://github.com/alandefreitas/matplotplusplus.git
-[submodule "3rdParty/glm"]
-	path = 3rdParty/glm
-	url = https://github.com/icaven/glm.git
-[submodule "3rdParty/fmt"]
-	path = 3rdParty/fmt
-	url = https://github.com/fmtlib/fmt.git
