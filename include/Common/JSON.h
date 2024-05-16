@@ -72,6 +72,7 @@ public:
 	template <class KeyType> constexpr BasicJson(KeyType&& key, value_type&& value) noexcept : node_type(std::forward<KeyType>(key)), m_value(std::move(value)) { }
 	constexpr BasicJson(BasicJson&&) = default;
 	constexpr BasicJson(const BasicJson&) requires std::is_copy_assignable_v<smart_pointer> = default;
+	constexpr ~BasicJson() noexcept = default;
 
 	constexpr reference operator=(const value_type& value) noexcept requires std::is_copy_assignable_v<smart_pointer> {
 		m_value = value;
