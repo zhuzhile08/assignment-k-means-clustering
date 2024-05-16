@@ -9,10 +9,11 @@
 
 void KMeansClustering::visualizeData() {
 	for (const auto& genera : m_data) {
+		matplot::tiledlayout(1, 2);
 
 		lstd::Array<matplot::axes_handle, 2> leaves;
-		leaves[0] = matplot::subplot(1, 2, 0); // sepal
-		leaves[1] = matplot::subplot(1, 2, 1); // petal
+		leaves[0] = matplot::nexttile(); // sepal
+		leaves[1] = matplot::nexttile(); // petal
 
 		for (const auto& species : *genera) {
 			auto& specimens = species->get<lstd::Json::array_type>();
@@ -51,7 +52,6 @@ void KMeansClustering::visualizeData() {
 			);
 			leaves[1]->hold(matplot::on);
 		}
-		
 
 		for (auto& leave : leaves) {
 			leave->axis({ 0, 10, 0, 10 });
