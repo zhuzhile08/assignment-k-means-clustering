@@ -4,11 +4,13 @@
 
 #include <matplot/matplot.h>
 
+#include <KMeansClustering.h>
+
 int main(int, char** argv) {
 	lstd::initLoggingSystem();
 	lstd::initFileSystem(argv);
 
-	lstd::Json data = lstd::Json::parse(lstd::StringStream("data/data.json").data());
+	KMeansClustering kMeansClustering;
 
-	lstd::log::debug(data.stringifyPretty());
+	kMeansClustering.visualizeData();
 }

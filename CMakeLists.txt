@@ -53,6 +53,8 @@ set (PROJECT_SOURCE_FILES
 	"src/Common/FileSystem.cpp"
 	"src/Common/Logger.cpp"
 
+
+	"src/KMeansClustering.cpp"
 	"src/main.cpp"
 )
 
