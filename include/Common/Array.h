@@ -15,6 +15,7 @@
 
 #include <utility>
 #include <algorithm>
+#include <stdexcept>
 
 namespace lstd {
 

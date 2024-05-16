@@ -20,6 +20,7 @@
 #include <new>
 #include <utility>
 #include <initializer_list>
+#include <stdexcept>
 
 namespace lstd {
 
